@@ -1,0 +1,30 @@
+<odoo>
+  <record id="crm_lead_form_custom_fields" model="ir.ui.view">
+    <field name="name">crm.lead.form.custom.fields</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='stage_id']" position="after">
+        <field name="source"/>
+        <field name="priority"/>
+        <field name="tags" widget="many2many_tags"/>
+      </xpath>
+      <xpath expr="//div[hasclass('oe_chatter')]" position="replace">
+        <chatter/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="crm_lead_list_custom_fields" model="ir.ui.view">
+    <field name="name">crm.lead.list.custom.fields</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_tree"/>
+    <field name="arch" type="xml">
+      <list>
+        <field name="source" optional="show"/>
+        <field name="priority" optional="show"/>
+        <field name="tags" optional="show"/>
+      </list>
+    </field>
+  </record>
+</odoo>
