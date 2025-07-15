@@ -1,12 +1,12 @@
 {
-  'name': 'CRM Lead Custom Fields',
+  'name': 'Sale Order Delivery Date and Notes',
   'version': '18.0.1.0.0',
   'category': 'Sales',
-  'summary': 'Add custom fields to CRM leads',
-  'depends': ['crm'],
+  'summary': 'Add delivery date and internal notes to sale orders',
+  'depends': ['sale'],
   'data': [
     'security/ir.model.access.csv',
-    'views/crm_lead_views.xml',
+    'views/sale_order_views.xml',
   ],
   'installable': True,
   'auto_install': False,

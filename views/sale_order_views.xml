@@ -1,0 +1,27 @@
+<odoo>
+  <record id="sale_order_form_custom_fields" model="ir.ui.view">
+    <field name="name">sale.order.form.custom.fields</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='payment_term_id']" position="after">
+        <field name="delivery_date"/>
+        <field name="internal_notes"/>
+      </xpath>
+      <xpath expr="//div[hasclass('oe_chatter')]" position="replace">
+        <chatter/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="sale_order_list_custom_fields" model="ir.ui.view">
+    <field name="name">sale.order.list.custom.fields</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_quotation_tree"/>
+    <field name="arch" type="xml">
+      <list>
+        <field name="delivery_date" optional="show"/>
+      </list>
+    </field>
+  </record>
+</odoo>
